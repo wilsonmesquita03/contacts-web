@@ -10,9 +10,10 @@ export interface IClient {
 
 export interface IContact {
     id: number
+    name: string
     email: string
     tel_number: string
-    created_at: Date
-    updated_at: Date
+    created_at: string
+    updated_at: string
     client: IClient
 }
