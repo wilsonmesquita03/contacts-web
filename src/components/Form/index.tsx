@@ -3,11 +3,12 @@ import { FormContainer } from "./styles"
 
 interface IFormProps {
     children: ReactNode
+    onSubmit: React.FormEventHandler<HTMLFormElement>
 }
 
-const Form = ({children}: IFormProps) => {
+const Form = ({children, onSubmit}: IFormProps) => {
     return (
-        <FormContainer>
+        <FormContainer onSubmit={(e) => onSubmit(e)}>
             {children}
         </FormContainer>
     )

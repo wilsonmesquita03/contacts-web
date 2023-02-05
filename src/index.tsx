@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import GlobalSyle from './styles/GlobalStyle';
 import { BrowserRouter } from "react-router-dom";
+import AuthProvider from './contexts/AuthContext';
 
 
 const root = ReactDOM.createRoot(
@@ -11,8 +12,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <GlobalSyle />
-      <App />
+      <AuthProvider>
+        <GlobalSyle />
+        <App />
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
