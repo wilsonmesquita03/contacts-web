@@ -1,7 +1,6 @@
 import { toast } from "react-toastify"
 import api from "."
 import { IClient } from "../interfaces"
-import AxiosError from "axios"
 
 
 export interface LoginData {    
@@ -23,6 +22,7 @@ export const handleLogin = async (reqData: LoginData) => {
         if(error?.response?.status === 403){  
             toast.warn("Email e/ou senha inválidos")
         }else{
+            console.log("BASE_URL", process.env.REACT_APP_API_BASE_URL)
             console.error(error)
             toast.error("Parece que algo deu errado😕")
         }
